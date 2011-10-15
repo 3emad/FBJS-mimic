@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>FBJS Mimic</title>
+	<link rel="stylesheet" type="text/css" href="{#callbackUrl#}styles/boxy.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" ></script>
+</head>
+<body>
+
+	<h1>FBJS mimic</h1>
+	<p>this is just a preview of the mandtory files and placings.</p>
+
+
+
+	<!-- Must be in Footer -->
+	<script src="js/jquery.livequery.js" type="text/javascript"></script>
+	{if !#website#}
+	<script type="text/javascript">
+	//ticket #137 _top for inside iframe facebook app
+	{literal}$(function() {$("a[name!='#']").attr('target','_top');});{/literal}
+	</script>
+	{/if}
+	<!--[if IE]> 
+	<script src="{#callbackUrl#}js/DOMElement.js" type="text/javascript"></script>
+	<![endif]-->
+	{if #website#}
+	<script src="js/jquery.fbjswrapper.js" type="text/javascript"></script>
+	<script src="js/jquery.fbajax.js" type="text/javascript"></script>
+	<script src="js/jquery.boxy.js" type="text/javascript"></script>
+	<script src="js/jquery.fbdialog.js" type="text/javascript"></script>
+	{/if}
+</body>
+</html>
